@@ -72,3 +72,23 @@ rspec spec/calculator_spec.rb:5
 ```
 
 Onde o número 5 é o número da linha do teste que quer rodar.
+
+## Easter egg: Como esse repo foi criado
+
+Vocês ainda vão ver isso em outra aula, mas se já quiserem adiantar. Esse repositório foi criado com a sequência de comandos:
+
+```bash
+rvm use 3.0.0
+rails _7.0.0_ new trainee_TDD --api --database='postgresql'
+cd trainee_TDD
+# Adicionar as gems do rspec no gemfile
+bundle install
+rails g rspec:install
+# Adicionar a gem do factory bot no gemfile
+bundle install
+# Alterar o spec_helper.rb e config do rspec para incluir o factory bot
+
+rails g model Calculator
+```
+
+E o resto é história. Vejam melhor as alterações de código no histórico de commits pelo github.
